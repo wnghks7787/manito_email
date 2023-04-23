@@ -1,6 +1,7 @@
 package manito;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Manito {
 
@@ -35,9 +36,25 @@ public class Manito {
             send_receive[i][i] = 0;
     }
 
-//    public void makeManito() {
-//
-//    }
+    public void makeManito() {
+        Random rand = new Random();
+        int i = 0;
+
+        while(i < num)
+        {
+            int iValue = rand.nextInt(num);
+            if(send_receive[i][iValue] != -1)
+                continue;
+
+            for(int j = 0 ; j < num ; j++)
+            {
+                send_receive[i][j] = 0;
+                send_receive[j][iValue] = 0;
+            }
+            send_receive[i][iValue] = 1;
+            i++;
+        }
+    }
 
     public void checkField() {
         System.out.println("This is check form");

@@ -6,6 +6,7 @@ public class Main {
 
         Manito myManito = new Manito(people);
 
+        myManito.makeManito();
         myManito.checkField();
     }
 }
